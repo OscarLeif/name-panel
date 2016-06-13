@@ -21,7 +21,7 @@
 #
 #  Author: Trentin Frederick (a.k.a, proxe)
 #  Contact: trentin.shaun.frederick@gmail.com
-#  Version: 1.6.2
+#  Version: 1.6.0
 #
 # ##### END INFO BLOCK #####
 
@@ -29,7 +29,7 @@
 bl_info = {
   'name': 'Name Panel',
   'author': 'Trentin Frederick (proxe)',
-  'version': (1, 6, 2),
+  'version': (1, 6, 0),
   'blender': (2, 67, 0),
   'location': '3D View \N{Rightwards Arrow} Tool or Property Shelf \N{Rightwards Arrow} Name',
   'description': 'In panel datablock name stack with batch name tools.',
@@ -43,7 +43,7 @@ import bpy
 from bpy.types import AddonPreferences
 from bpy.props import *
 from .scripts import settings as PropertyGroup
-from .scripts.interface import button, icon, menu, name, properties
+from .scripts.interface import button, icon, menu, name
 from .scripts.interface.operator import auto, batch, copy, icon, settings, text
 
 # addon
@@ -55,13 +55,6 @@ class preferences(AddonPreferences):
     Add-on user preferences.
   '''
   bl_idname = __name__
-
-  # popups
-  popups = BoolProperty(
-    name = 'Pop-ups',
-    description = 'Enable settings pop-up for modifiers and constraints. (Experimental!)',
-    default = False
-  )
 
   # large popups
   largePopups = BoolProperty(
@@ -89,9 +82,6 @@ class preferences(AddonPreferences):
 
     # row
     row = layout.row()
-
-    # pop ups
-    # row.prop(self, 'popups')
 
     # pop ups
     row.prop(self, 'largePopups')
@@ -207,16 +197,12 @@ def register():
     try:
       if addon.preferences['location'] == 0:
         bpy.utils.unregister_class(name.UIName)
-        bpy.utils.unregister_class(properties.UIProperties)
       else:
         bpy.utils.unregister_class(name.toolsName)
-        bpy.utils.unregister_class(properties.toolsProperties)
     except:
       bpy.utils.unregister_class(name.UIName)
-      bpy.utils.unregister_class(properties.UIProperties)
   else:
     bpy.utils.unregister_class(name.UIName)
-    bpy.utils.unregister_class(properties.UIProperties)
 
 # unregister
 def unregister():
