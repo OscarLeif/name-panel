@@ -93,28 +93,28 @@ class preferences(AddonPreferences):
     row = layout.row()
     row.prop(self, 'location', expand=True)
 
-    # label
-    layout.label(text='Links:')
+    # # label
+    # layout.label(text='Links:')
 
-    # split
-    split = layout.split(align=True)
-    split.scale_y = 2
+    # # split
+    # split = layout.split(align=True)
+    # split.scale_y = 2
 
-    # blender market
-    prop = split.operator('wm.url_open', text='Blender Market')
-    prop.url = 'https://cgcookiemarkets.com/all-products/name-panel/'
+    # # blender market
+    # prop = split.operator('wm.url_open', text='Blender Market')
+    # prop.url = 'https://cgcookiemarkets.com/all-products/name-panel/'
 
-    # gumroad
-    prop = split.operator('wm.url_open', text='Gumroad')
-    prop.url = 'https://gumroad.com/l/UyXd'
+    # # gumroad
+    # prop = split.operator('wm.url_open', text='Gumroad')
+    # prop.url = 'https://gumroad.com/l/UyXd'
 
-    # blender artists
-    prop = split.operator('wm.url_open', text='Blender Artists')
-    prop.url = 'http://blenderartists.org/forum/showthread.php?272086'
+    # # blender artists
+    # prop = split.operator('wm.url_open', text='Blender Artists')
+    # prop.url = 'http://blenderartists.org/forum/showthread.php?272086'
 
-    # github
-    prop = split.operator('wm.url_open', text='Github')
-    prop.url = 'https://github.com/trentinfrederick/name-panel'
+    # # github
+    # prop = split.operator('wm.url_open', text='Github')
+    # prop.url = 'https://github.com/trentinfrederick/name-panel'
 
 # register
 def register():
