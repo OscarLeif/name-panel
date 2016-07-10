@@ -274,7 +274,7 @@ class name(Operator):
     sub.scale_x = 0.1
     sub.prop(option, 'separator', text='')
     row.prop(option, 'sortOnly', text='', icon='LOCKED')
-    row.prop(option, 'link', text='', icon='LINKED')
+    # row.prop(option, 'link', text='', icon='LINKED')
 
   # execute
   def execute(self, context):
